@@ -1,0 +1,100 @@
+/* =========================
+   RESET CSS
+========================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--fonte-principal);
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+:focus {
+    outline: none;
+}
+
+::selection {
+    background: #d67c8a;
+    color: #ffffff;
+}
+
+:root {
+
+    /* Cores */
+    --cor-principal: #8B4513;
+    --cor-secundaria: #D67C8A;
+    --cor-fundo: #FFF8F5;
+    --cor-texto: #3E2723;
+    --cor-branco: #FFFFFF;
+
+    /* Tipografia */
+    --fonte-principal: "Poppins", sans-serif;
+    --fonte-titulo: "Playfair Display", serif;
+
+    /* Sombras */
+    --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --sombra-media: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    /* Bordas */
+    --radius-pequeno: 8px;
+    --radius-medio: 15px;
+    --radius-grande: 25px;
+
+    /* Container */
+    --container: 1280px;
+
+}
