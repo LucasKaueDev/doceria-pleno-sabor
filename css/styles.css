@@ -75,10 +75,15 @@ textarea {
 :root {
 
     /* Cores */
-    --cor-principal: #8B4513;
-    --cor-secundaria: #D67C8A;
-    --cor-fundo: #FFF8F5;
-    --cor-texto: #3E2723;
+    --cor-principal: #351608;
+    --cor-secundaria: #df7288;
+    --cor-fundo: #fff7f4;
+    --cor-texto: #35170d;
+    --cor-header: #2a1008;
+    --cor-header-profundo: #140703;
+    --cor-rose-claro: #f7d8dd;
+    --cor-champagne: #fffaf6;
+    --cor-dourado: #c49a5a;
     --cor-branco: #FFFFFF;
 
     /* Tipografia */
@@ -86,8 +91,8 @@ textarea {
     --fonte-titulo: "Playfair Display", serif;
 
     /* Sombras */
-    --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.08);
-    --sombra-media: 0 8px 25px rgba(0, 0, 0, 0.12);
+    --sombra-suave: 0 10px 30px rgba(84, 34, 14, 0.08);
+    --sombra-media: 0 18px 45px rgba(84, 34, 14, 0.16);
 
     /* Bordas */
     --radius-pequeno: 8px;
@@ -97,4 +102,199 @@ textarea {
     /* Container */
     --container: 1280px;
 
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, rgba(215, 110, 127, 0.14), transparent 34rem),
+        linear-gradient(180deg, var(--cor-champagne) 0%, var(--cor-fundo) 100%);
+    color: var(--cor-texto);
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: minmax(22rem, 26rem) 1fr auto;
+    align-items: center;
+    gap: clamp(1.8rem, 2.4vw, 3rem);
+    width: 100%;
+    min-height: 10.8rem;
+    margin: 0;
+    padding: 1rem clamp(2.4rem, 4.5vw, 6.4rem);
+    background:
+        linear-gradient(90deg, rgba(20, 7, 3, 0.96), rgba(53, 22, 8, 0.96) 46%, rgba(32, 12, 5, 0.97)),
+        radial-gradient(circle at 12% 50%, rgba(223, 114, 136, 0.18), transparent 28rem);
+    border-bottom: 1px solid rgba(247, 216, 221, 0.25);
+    box-shadow: 0 1.4rem 4rem rgba(53, 22, 8, 0.24);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    width: clamp(22rem, 19vw, 26rem);
+    aspect-ratio: 2 / 1;
+    height: auto;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter:
+        saturate(1.06)
+        contrast(1.03)
+        brightness(1.04)
+        drop-shadow(0 0.8rem 1.8rem rgba(247, 154, 149, 0.16));
+}
+
+.nav {
+    justify-self: center;
+}
+
+.nav__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem clamp(1.1rem, 1.45vw, 2rem);
+}
+
+.nav__links a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 3.6rem;
+    color: rgba(255, 250, 246, 0.88);
+    font-size: 1.28rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-shadow: 0 0.3rem 0.9rem rgba(0, 0, 0, 0.32);
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav__links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0.35rem;
+    width: 0;
+    height: 0.2rem;
+    background: linear-gradient(90deg, #ff9bad, var(--cor-secundaria));
+    border-radius: 999px;
+    transition: width 0.25s ease, left 0.25s ease;
+}
+
+.nav__links a:hover {
+    color: #ffb4c1;
+    transform: translateY(-1px);
+}
+
+.nav__links a:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+.pedir__agora {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    min-height: 4.7rem;
+    padding: 1.1rem 2.3rem;
+    background: linear-gradient(135deg, #e87f94, #d9657d);
+    color: var(--cor-branco);
+    font-size: 1.28rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 202, 211, 0.35);
+    border-radius: 999px;
+    box-shadow: 0 1.2rem 2.8rem rgba(223, 114, 136, 0.28);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.pedir__agora:hover {
+    background: linear-gradient(135deg, #f08aa0, #cf5872);
+    transform: translateY(-2px);
+    box-shadow: 0 1.6rem 3.4rem rgba(223, 114, 136, 0.36);
+}
+
+.whatsapp-icon {
+    position: relative;
+    width: 1.8rem;
+    height: 1.8rem;
+    border: 0.2rem solid currentColor;
+    border-radius: 50%;
+}
+
+.whatsapp-icon::before {
+    content: "";
+    position: absolute;
+    left: 0.35rem;
+    top: 0.34rem;
+    width: 0.56rem;
+    height: 0.86rem;
+    border: solid currentColor;
+    border-width: 0 0.22rem 0.22rem 0;
+    border-radius: 0 0 0.25rem 0;
+    transform: rotate(142deg);
+}
+
+.whatsapp-icon::after {
+    content: "";
+    position: absolute;
+    left: -0.08rem;
+    bottom: -0.2rem;
+    width: 0.56rem;
+    height: 0.56rem;
+    background: currentColor;
+    clip-path: polygon(0 0, 100% 38%, 28% 100%);
+}
+
+@media (max-width: 980px) {
+    .header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1rem;
+        min-height: 0;
+        padding: 1.4rem;
+        text-align: center;
+    }
+
+    .brand {
+        justify-content: center;
+        width: min(76vw, 33rem);
+        min-width: 0;
+    }
+}
+
+@media (max-width: 620px) {
+    .header {
+        padding: 1.6rem 1.2rem 1.8rem;
+    }
+
+    .nav__links {
+        gap: 0.2rem 1.2rem;
+    }
+
+    .brand {
+        width: min(84vw, 32rem);
+    }
+
+    .nav__links a {
+        min-height: 3rem;
+        font-size: 1.18rem;
+    }
+
+    .pedir__agora {
+        width: 100%;
+        max-width: 28rem;
+    }
 }
